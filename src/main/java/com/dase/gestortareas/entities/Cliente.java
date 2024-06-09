@@ -89,6 +89,9 @@ public class Cliente implements Serializable {
     private Date fechaModifico;
     @Column(name = "estado", nullable = false)
     private Integer estado;
+    @Size(min = 1, max = 100)
+    @Column(name = "direccion")
+    private String direccion;
 
     public Cliente() {
     }
@@ -202,6 +205,13 @@ public class Cliente implements Serializable {
         this.estado = estado;
     }
 
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
     
     @Override
     public int hashCode() {
